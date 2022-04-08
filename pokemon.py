@@ -83,5 +83,20 @@ def set_defensa(self,defensadelpokemon):
 def is_alive(self):
     return not bool(self._salud == 0)
 
-def fight_attack(self, Pokémon pokemon_to_attack):
-    
+def fight_attack (self, Pokémon pokemon_to_attack):
+    daño = self._ataque
+    print(self._nombre + "atacó a" + pokemon_to_attack.get_nombre() + "con" + str(daño) + "puntos")
+    pokemonatacado = pokemon_to_attack.fight_defense(daño)
+    return pokemonatacado
+def fight_defense(self,daño):
+    if not isinstance(daño,int):
+        raise TypeError
+    print(self._nombre + "recibió un ataque de" + str(daño) + "puntos")
+    if daño > self._defensa:
+        self._salud = (self._salud-self.daño)
+        pokemonatacado = True
+    else:
+        print("No ha sido dañado")
+        pokemonatacado = False
+    return pokemonatacado
+
