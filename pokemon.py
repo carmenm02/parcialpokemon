@@ -83,7 +83,7 @@ def set_defensa(self,defensadelpokemon):
 def is_alive(self):
     return not bool(self._salud == 0)
 
-def fight_attack (self, Pokémon pokemon_to_attack):
+def fight_attack(self,pokemon_to_attack):
     daño = self._ataque
     print(self._nombre + "atacó a" + pokemon_to_attack.get_nombre() + "con" + str(daño) + "puntos")
     pokemonatacado = pokemon_to_attack.fight_defense(daño)
